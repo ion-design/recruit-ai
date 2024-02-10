@@ -1,113 +1,190 @@
-import Image from "next/image";
+"use client";
+// Generated with Ion on 2/10/2024, 1:40:30 PM
+// Figma Link: https://www.figma.com/file/CuhlaeGrgTg8c0wAZqD6ny?node-id=4014:26726
+import { MouseEvent, useMemo } from "react";
+import { CurrencyDollar, UserCirclePlus } from "@phosphor-icons/react";
+import Tag from "@/components/ion/Tag";
+import Button from "@/components/ion/Button";
+import Avatar from "@/components/ion/Avatar";
+import SideNavigation from "@/components/ion/SideNavigation";
+import TopBar from "@/components/ion/TopBar";
+import { ColumnDef } from "@tanstack/react-table";
+import Table from "@/components/ion/Table";
+import DashboardCard from "@/components/ion/DashboardCard";
 
-export default function Home() {
-  return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
+function Dashboard() {
+   const columns = useMemo(
+      () =>
+         [
+            {
+               header: "#",
+               cell: ({ row: { original: cellData } }) => <>1</>,
+            },
+            {
+               header: "Job Title",
+               cell: ({ row: { original: cellData } }) => (
+                  <div className="flex-col flex justify-center gap-1">
+                     <div className="text-foreground">Supervisory</div>
+                     <div className="text-sub-foreground">HR</div>
+                  </div>
+               ),
+            },
+            {
+               header: "Industry",
+               cell: ({ row: { original: cellData } }) => <>Vetrans Affairs</>,
+            },
+            {
+               header: "Salary ($)",
+               cell: ({ row: { original: cellData } }) => (
+                  <Tag
+                     iconLeading={<CurrencyDollar size={16} weight={"bold"} />}
+                     type="stroke"
+                     color="simple"
+                     onClick={_3000ClickHandler}
+                  >
+                     3000
+                  </Tag>
+               ),
+            },
+            {
+               header: "Action",
+               cell: ({ row: { original: cellData } }) => (
+                  <Button
+                     iconLeading={<UserCirclePlus size={16} weight={"bold"} />}
+                     emphasis="low"
+                     color="primary"
+                     size="sm"
+                     onClick={searchTalentClickHandler}
+                  >
+                     Search Talent
+                  </Button>
+               ),
+            },
+         ] as ColumnDef<unknown>[],
+      []
+   );
+   const columns_1 = useMemo(
+      () =>
+         [
+            {
+               header: "#",
+               cell: ({ row: { original: cellData } }) => <>1</>,
+            },
+            {
+               header: "Talent Photo",
+               cell: ({ row: { original: cellData } }) => (
+                  <Avatar
+                     size="md"
+                     src="https://i.ibb.co/jrmkxZZ/placeholder-Person.png"
+                  />
+               ),
+            },
+            {
+               header: "Industry",
+               cell: ({ row: { original: cellData } }) => <>Marquis Thompson</>,
+            },
+            {
+               header: "Salary ($)",
+               cell: ({ row: { original: cellData } }) => (
+                  <Tag
+                     iconLeading={<CurrencyDollar size={16} weight={"bold"} />}
+                     type="stroke"
+                     color="simple"
+                     onClick={_3000ClickHandler}
+                  >
+                     3000
+                  </Tag>
+               ),
+            },
+            {
+               header: "Action",
+               cell: ({ row: { original: cellData } }) => (
+                  <Button
+                     iconLeading={<UserCirclePlus size={16} weight={"bold"} />}
+                     emphasis="low"
+                     color="primary"
+                     size="sm"
+                     onClick={searchTalentClickHandler}
+                  >
+                     Search Talent
+                  </Button>
+               ),
+            },
+         ] as ColumnDef<unknown>[],
+      []
+   );
+   function _3000ClickHandler(e: MouseEvent<HTMLButtonElement>) {
+      alert("_3000ClickHandler fired");
+   }
+   function searchTalentClickHandler(e: MouseEvent<HTMLButtonElement>) {
+      alert("searchTalentClickHandler fired");
+   }
+   return (
+      <div className="bg-weak w-full h-full flex">
+         <SideNavigation />
+         <div className="h-full flex-1 flex-col flex bg-weak">
+            <TopBar />
+            <div className="w-full flex-1 flex-col flex gap-5 p-10">
+               <div className="text-3xl font-medium text-foreground">
+                  Dashboard
+               </div>
+               <div className="w-full flex items-start gap-5">
+                  <DashboardCard title="Total Opening" value="1 Job" src=" " />
+                  <DashboardCard
+                     src=" "
+                     value="5 Candidates"
+                     title="Total Candidates"
+                  />
+                  <DashboardCard src=" " value="1 Hired" title="Total Hired" />
+                  <DashboardCard
+                     src=" "
+                     value="0 Rejected"
+                     title="Total Rejected"
+                  />
+               </div>
+               <div className="bg-background w-full h-[539px] flex-col flex gap-5 p-5 rounded-radius shadow-[0_1px_1px_0_rgba(0,0,0,0.07),0_1px_2px_0_rgba(0,0,0,0.08),0_2px_2px_0_rgba(0,0,0,0.1),0_0_8px_0_rgba(0,0,0,0.05)] text-xl font-semibold text-foreground">
+                  <div>Candidates Overview</div>
+                  <img
+                     className="object-cover w-full h-[437px]"
+                     alt="chart-placeholder 1"
+                     src="/images/dashboard/chart-placeholder-1.png"
+                  />
+               </div>
+               <div className="w-full flex-1 flex gap-5 items-stretch">
+                  <div className="bg-background h-full flex-1 flex-col flex gap-3 p-3 rounded-radius shadow-[0_1px_1px_0_rgba(0,0,0,0.07),0_1px_2px_0_rgba(0,0,0,0.08),0_2px_2px_0_rgba(0,0,0,0.1),0_0_8px_0_rgba(0,0,0,0.05)]">
+                     <div className="text-xl font-semibold text-black">
+                        Potential Candidates
+                     </div>
+                     <Table
+                        columns={columns}
+                        data={Array(3).fill({
+                           jobTitle: "",
+                           industry: "",
+                           salary: "",
+                           action: "",
+                        })}
+                        className="w-full"
+                     />
+                  </div>
+                  <div className="bg-background h-full flex-1 flex-col flex gap-3 p-3 rounded-radius shadow-[0_1px_1px_0_rgba(0,0,0,0.07),0_1px_2px_0_rgba(0,0,0,0.08),0_2px_2px_0_rgba(0,0,0,0.1),0_0_8px_0_rgba(0,0,0,0.05)]">
+                     <div className="text-xl font-semibold text-black">
+                        Potential Candidates
+                     </div>
+                     <Table
+                        columns={columns_1}
+                        data={Array(3).fill({
+                           talentPhoto: "",
+                           industry: "",
+                           salary: "",
+                           action: "",
+                        })}
+                        className="w-full"
+                     />
+                  </div>
+               </div>
+            </div>
+         </div>
       </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  );
+   );
 }
+export default Dashboard;
