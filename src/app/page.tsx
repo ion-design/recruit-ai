@@ -120,24 +120,24 @@ function Dashboard() {
       alert("searchTalentClickHandler fired");
    }
    return (
-      <div className="bg-weak w-full h-full flex">
+      <div className="bg-weak w-screen h-screen flex">
          <SideNavigation />
          <div className="h-full flex-1 flex-col flex bg-weak">
             <TopBar />
-            <div className="w-full flex-1 flex-col flex gap-5 p-10">
+            <div className="w-full flex-1 flex-col flex gap-5 p-10 overflow-scroll">
                <div className="text-3xl font-medium text-foreground">
                   Dashboard
                </div>
                <div className="w-full flex items-start gap-5">
-                  <DashboardCard title="Total Opening" value="1 Job" src=" " />
+                  <DashboardCard title="Total Opening" value="1 Job" src="/images/dashboard/untitled-2.png" />
                   <DashboardCard
-                     src=" "
+                     src="/images/dashboard/untitled-2.png"
                      value="5 Candidates"
                      title="Total Candidates"
                   />
-                  <DashboardCard src=" " value="1 Hired" title="Total Hired" />
+                  <DashboardCard src="/images/dashboard/untitled-2.png" value="1 Hired" title="Total Hired" />
                   <DashboardCard
-                     src=" "
+                     src="/images/dashboard/untitled-2.png"
                      value="0 Rejected"
                      title="Total Rejected"
                   />

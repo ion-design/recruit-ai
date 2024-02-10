@@ -15,7 +15,7 @@ export default function Sidebar({
    return (
       <div
          className={clsx(
-            "block h-auto min-h-screen flex-col justify-between shrink-0",
+            "block h-screen min-h-screen flex-col justify-between shrink-0",
             {
                "bg-primary-darker dark:bg-primary-lighter": filled,
                "border-r border-soft-stroke": !filled,

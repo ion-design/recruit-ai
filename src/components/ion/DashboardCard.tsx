@@ -9,15 +9,15 @@ type DashboardCardProps = {
 };
 
 function DashboardCard({
-	src = ' ',
+	src = '/images/dashboard/untitled-2.png',
 	value = '1 Job',
 	title = 'Total Opening',
-	className = '',
+	className = '/images/dashboard/untitled-2.png',
 }: DashboardCardProps) {
 	return (
 		<div
 			className={clsx(
-				'bg-background w-[320px] h-[120px] flex justify-between items-center px-5 py-6 rounded-radius shadow-[0_1px_1px_0_rgba(0,0,0,0.07),0_1px_2px_0_rgba(0,0,0,0.08),0_2px_2px_0_rgba(0,0,0,0.1),0_0_8px_0_rgba(0,0,0,0.05)]',
+				'bg-background w-full h-[120px] flex justify-between items-center px-5 py-6 rounded-radius shadow-[0_1px_1px_0_rgba(0,0,0,0.07),0_1px_2px_0_rgba(0,0,0,0.08),0_2px_2px_0_rgba(0,0,0,0.1),0_0_8px_0_rgba(0,0,0,0.05)]',
 				className
 			)}
 		>
@@ -28,7 +28,7 @@ function DashboardCard({
 			<img
 				className="object-cover h-[72px] w-[72px]"
 				alt="Untitled 2"
-				src="/images/dashboard/untitled-2.png"
+				src={src}
 			/>
 		</div>
 	);

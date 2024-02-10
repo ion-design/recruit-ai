@@ -20,7 +20,7 @@ import { usePathname } from "next/navigation";
 function SideNavigation() {
    const pathname = usePathname();
    return (
-      <Sidebar filled className="w-[340px]">
+      <Sidebar filled className="w-[340px] rounded-br-[250px]">
          <div className="w-full flex-col flex gap-10 py-10 h-full">
             <div className="w-full flex justify-center items-start">
                <img

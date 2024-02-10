@@ -93,11 +93,11 @@ function Dashboard() {
       alert("searchMoreClickHandler fired");
    }
    return (
-      <div className="bg-weak w-full h-full flex">
+      <div className="bg-weak w-screen h-screen flex">
          <SideNavigation />
          <div className="h-full flex-1 flex-col flex">
             <TopBar />
-            <div className="w-full flex-1 flex items-start p-10">
+            <div className="w-full flex-1 flex items-start p-10 overflow-y-scroll">
                <div className="bg-background flex-1 flex-col flex items-center gap-5 px-5 py-8 rounded-radius border border-soft-stroke">
                   <div className="text-xl font-semibold text-foreground w-full">
                      Potential Candidates

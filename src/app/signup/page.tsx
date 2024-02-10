@@ -52,6 +52,7 @@ function SignUp() {
                />
                <Input
                   placeholder="Password"
+                  type="password"
                   iconLeading={<Lock size={16} weight={"bold"} />}
                   value={inputValue_2}
                   onChange={(e) => setInputValue_2(e.target.value)}
@@ -59,6 +60,7 @@ function SignUp() {
                />
                <Input
                   placeholder="Confirm Password"
+                  type="password"
                   iconLeading={<Lock size={16} weight={"bold"} />}
                   value={inputValue_3}
                   onChange={(e) => setInputValue_3(e.target.value)}

@@ -85,6 +85,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
 					<input
 						aria-required={required}
 						id={id}
+						type={type}
 						className={clsx(
 							'h-9 w-full flex-shrink rounded-radius bg-transparent focus:outline-none',
 							'placeholder:text-soft-foreground disabled:text-soft-foreground',

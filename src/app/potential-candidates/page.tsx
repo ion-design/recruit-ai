@@ -94,6 +94,8 @@ function PotentialCandidatesFilter() {
    function downloadTableClickHandler(e: MouseEvent<HTMLButtonElement>) {
       alert("downloadTableClickHandler fired");
    }
+
+   // These are click handlers for the tags, they can be put in to a mapping instead
    function jobTitle3ClickHandler(e: MouseEvent<HTMLButtonElement>) {
       alert("jobTitle3ClickHandler fired");
    }
@@ -112,18 +114,22 @@ function PotentialCandidatesFilter() {
    function occupation3DismissHandler(e: MouseEvent<SVGSVGElement>) {
       alert("occupation3DismissHandler fired");
    }
+
+
    function saveSearchClickHandler(e: MouseEvent<HTMLButtonElement>) {
       alert("saveSearchClickHandler fired");
    }
    function searchMoreClickHandler(e: MouseEvent<HTMLButtonElement>) {
       alert("searchMoreClickHandler fired");
    }
+
+
    return (
-      <div className="bg-weak w-full h-full flex">
+      <div className="bg-weak w-screen h-screen flex">
          <SideNavigation />
          <div className="h-full flex-1 flex-col flex">
             <TopBar />
-            <div className="w-full flex-1 flex items-start p-10">
+            <div className="w-full flex-1 flex items-start p-10 overflow-y-scroll">
                <div className="bg-background flex-1 flex-col flex items-center gap-5 px-5 py-8 rounded-radius border border-soft-stroke">
                   <div className="text-xl font-semibold text-foreground w-full">
                      Talents Listing

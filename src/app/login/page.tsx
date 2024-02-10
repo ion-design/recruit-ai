@@ -43,6 +43,7 @@ function Login() {
                />
                <Input
                   placeholder="Password"
+                  type="password"
                   iconLeading={<Lock size={16} weight={"bold"} />}
                   value={inputValue_1}
                   onChange={(e) => setInputValue_1(e.target.value)}
