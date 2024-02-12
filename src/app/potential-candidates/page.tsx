@@ -17,6 +17,7 @@ import Tag from "@/components/ion/Tag";
 import { ColumnDef } from "@tanstack/react-table";
 import Table from "@/components/ion/Table";
 import Pagination from "@/components/ion/Pagination";
+import ScheduleInterviewsModal from "@/components/ion/ScheduleInterviewsModal";
 
 function PotentialCandidatesFilter() {
    const columns = useMemo(
@@ -135,17 +136,19 @@ function PotentialCandidatesFilter() {
                      Talents Listing
                   </div>
                   <div className="w-full flex justify-between items-start">
-                     <Button
-                        iconLeading={
-                           <MagnifyingGlass size={16} weight={"bold"} />
-                        }
-                        emphasis="high"
-                        color="primary"
-                        size="lg"
-                        onClick={searchMoreClickHandler}
-                     >
-                        Search More
-                     </Button>
+                     <ScheduleInterviewsModal>
+                        <Button
+                           iconLeading={
+                              <MagnifyingGlass size={16} weight={"bold"} />
+                           }
+                           emphasis="high"
+                           color="primary"
+                           size="lg"
+                           // onClick={searchMoreClickHandler}
+                        >
+                           Search More
+                        </Button>
+                     </ScheduleInterviewsModal>
                      <div className="flex items-start gap-5">
                         <Button
                            iconLeading={
